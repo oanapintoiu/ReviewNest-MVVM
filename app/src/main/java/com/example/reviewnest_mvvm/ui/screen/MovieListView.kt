@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.ui.screen
+package com.example.reviewnest_mvvm.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,11 +14,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -26,35 +23,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
-import com.example.reviewnest_mvp.model.MovieListItemModel
-import com.example.reviewnest_mvp.presenter.MovieListView
-import com.example.reviewnest_mvp.presenter.MoviesListPresenterContract
-import com.example.reviewnest_mvp.ui.theme.Coral
-import com.example.reviewnest_mvp.ui.theme.Purple40
-import com.example.reviewnest_mvp.ui.theme.Purple80
-import com.example.reviewnest_mvp.ui.theme.White
+import com.example.reviewnest_mvvm.viewmodel.MovieListViewModel
+import com.example.reviewnest_mvvm.ui.theme.Purple80
+import com.example.reviewnest_mvvm.ui.theme.White
 
 @Composable
 fun MovieListScreen(
-    presenter: MoviesListPresenterContract,
+    viewModel: MovieListViewModel,
     onMovieClicked: (Int) -> Unit
 ) {
-    var movies by remember { mutableStateOf(emptyList<MovieListItemModel>()) }
-
-    // Implement the MoviesView interface in Compose
-    val view = remember {
-        object : MovieListView {
-            override fun showMovieList(moviesList: List<MovieListItemModel>) {
-                movies = moviesList
-            }
-        }
-    }
-
-    // Request movies when the composable first launches
-    LaunchedEffect(Unit) {
-        presenter.attachView(view)
-        presenter.loadMovies()
-    }
+    val movies by viewModel.movies.collectAsState()
 
     Column(
         modifier = Modifier

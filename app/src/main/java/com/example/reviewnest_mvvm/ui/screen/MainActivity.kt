@@ -1,17 +1,16 @@
-package com.example.reviewnest_mvp.ui.screen
+package com.example.reviewnest_mvvm.ui.screen
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.example.reviewnest_mvp.BuildConfig
-import com.example.reviewnest_mvp.network.api.TMDbApiProvider
-import com.example.reviewnest_mvp.presenter.MovieDetailsPresenter
-import com.example.reviewnest_mvp.presenter.MovieListPresenter
+import com.example.reviewnest_mvvm.BuildConfig
+import com.example.reviewnest_mvvm.network.api.TMDbApiProvider
+import com.example.reviewnest_mvvm.viewmodel.MovieDetailsViewModel
+import com.example.reviewnest_mvvm.viewmodel.MovieListViewModel
 
 
 class MainActivity : ComponentActivity() {
@@ -26,16 +25,16 @@ class MainActivity : ComponentActivity() {
             var selectedMovieId by remember { mutableStateOf<Int?>(null) }
 
             if (selectedMovieId == null) {
-                val presenter = remember { MovieListPresenter(provider) }
+                val viewModel = remember { MovieListViewModel(provider) }
                 MovieListScreen(
-                    presenter = presenter,
+                    viewModel = viewModel,
                     onMovieClicked = { movieId -> selectedMovieId = movieId }
                 )
             } else {
                 selectedMovieId?.let { movieId ->
-                    val presenter = remember { MovieDetailsPresenter(provider) }
+                    val viewModel = remember { MovieDetailsViewModel(provider) }
                     MovieDetailsScreen(
-                        presenter = presenter,
+                        viewModel = viewModel,
                         movieId = movieId,
                         onBack = { selectedMovieId = null }
                     )

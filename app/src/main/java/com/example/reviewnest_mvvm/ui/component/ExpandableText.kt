@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.ui.component
+package com.example.reviewnest_mvvm.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,8 +17,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.reviewnest_mvp.ui.theme.Purple80
-import com.example.reviewnest_mvp.ui.theme.White
+import com.example.reviewnest_mvvm.ui.theme.Purple80
+import com.example.reviewnest_mvvm.ui.theme.White
 
 @Composable
 fun ExpandableReviewText(

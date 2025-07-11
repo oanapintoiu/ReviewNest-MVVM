@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp
+package com.example.reviewnest_mvvm
 
 import org.junit.Test
 

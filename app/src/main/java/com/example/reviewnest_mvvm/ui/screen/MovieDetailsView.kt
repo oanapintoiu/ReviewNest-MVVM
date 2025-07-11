@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.ui.screen
+package com.example.reviewnest_mvvm.ui.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,6 +19,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -33,34 +34,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
-import com.example.reviewnest_mvp.model.MovieDetailsModel
-import com.example.reviewnest_mvp.presenter.MovieDetailsPresenterContract
-import com.example.reviewnest_mvp.presenter.MovieDetailsView
-import com.example.reviewnest_mvp.ui.component.ExpandableReviewText
-import com.example.reviewnest_mvp.ui.theme.Purple40
-import com.example.reviewnest_mvp.ui.theme.Purple80
-import com.example.reviewnest_mvp.ui.theme.White
+import com.example.reviewnest_mvvm.ui.component.ExpandableReviewText
+import com.example.reviewnest_mvvm.ui.theme.Purple40
+import com.example.reviewnest_mvvm.ui.theme.Purple80
+import com.example.reviewnest_mvvm.ui.theme.White
+import com.example.reviewnest_mvvm.viewmodel.MovieDetailsViewModel
 
 @Composable
 fun MovieDetailsScreen(
-    presenter: MovieDetailsPresenterContract,
+    viewModel: MovieDetailsViewModel,
     movieId: Int,
     onBack: () -> Unit,
 ) {
 
-    var movie by remember { mutableStateOf<MovieDetailsModel?>(null) }
+    val movie by viewModel.details.collectAsState()
 
-    val view = remember {
-        object : MovieDetailsView {
-            override fun showMovieDetails(details: MovieDetailsModel) {
-                movie = details
-            }
-        }
-    }
-
-    LaunchedEffect(Unit) {
-        presenter.attachView(view)
-        presenter.loadMovieDetails(movieId)
+    // Load the movie details when movieId changes
+    LaunchedEffect(movieId) {
+        viewModel.loadMovieDetails(movieId)
     }
 
     movie?.let { details ->
