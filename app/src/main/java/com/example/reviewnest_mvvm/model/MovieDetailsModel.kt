@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.model
+package com.example.reviewnest_mvvm.model
 
 data class MovieDetailsModel(
     val id: String,

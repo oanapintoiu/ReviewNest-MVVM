@@ -1,7 +1,7 @@
-package com.example.reviewnest_mvp.mappers
+package com.example.reviewnest_mvvm.mappers
 
-import com.example.reviewnest_mvp.network.dto.MoviesListItemDTO
-import com.example.reviewnest_mvp.model.MovieListItemModel
+import com.example.reviewnest_mvvm.network.dto.MoviesListItemDTO
+import com.example.reviewnest_mvvm.model.MovieListItemModel
 
 fun MoviesListItemDTO.toMoviesListItemModel(): MovieListItemModel =
     MovieListItemModel(

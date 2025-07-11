@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ReviewNest-MVP"
+rootProject.name = "ReviewNest-MVVM"
 include(":app")

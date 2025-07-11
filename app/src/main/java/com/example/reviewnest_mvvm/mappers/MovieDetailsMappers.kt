@@ -1,11 +1,11 @@
-package com.example.reviewnest_mvp.mappers
+package com.example.reviewnest_mvvm.mappers
 
-import com.example.reviewnest_mvp.model.CastMemberModel
-import com.example.reviewnest_mvp.model.MovieDetailsModel
-import com.example.reviewnest_mvp.model.ReviewsModel
-import com.example.reviewnest_mvp.network.dto.CastMemberDTO
-import com.example.reviewnest_mvp.network.dto.MovieDetailsDTO
-import com.example.reviewnest_mvp.network.dto.ReviewsDTO
+import com.example.reviewnest_mvvm.model.CastMemberModel
+import com.example.reviewnest_mvvm.model.MovieDetailsModel
+import com.example.reviewnest_mvvm.model.ReviewsModel
+import com.example.reviewnest_mvvm.network.dto.CastMemberDTO
+import com.example.reviewnest_mvvm.network.dto.MovieDetailsDTO
+import com.example.reviewnest_mvvm.network.dto.ReviewsDTO
 
 fun MovieDetailsDTO.toMovieDetailsModel(
     cast: List<CastMemberModel>,

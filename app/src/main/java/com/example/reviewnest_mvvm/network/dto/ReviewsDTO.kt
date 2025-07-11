@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.network.dto
+package com.example.reviewnest_mvvm.network.dto
 
 import com.google.gson.annotations.SerializedName
 
