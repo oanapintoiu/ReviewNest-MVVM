@@ -1,11 +1,11 @@
-package com.example.reviewnest_mvp.network.api
+package com.example.reviewnest_mvvm.network.api
 
-import com.example.reviewnest_mvp.mappers.toCastMemberModel
-import com.example.reviewnest_mvp.mappers.toMovieDetailsModel
-import com.example.reviewnest_mvp.model.MovieListItemModel
-import com.example.reviewnest_mvp.mappers.toMoviesModelList
-import com.example.reviewnest_mvp.mappers.toReviewModel
-import com.example.reviewnest_mvp.model.MovieDetailsModel
+import com.example.reviewnest_mvvm.mappers.toCastMemberModel
+import com.example.reviewnest_mvvm.mappers.toMovieDetailsModel
+import com.example.reviewnest_mvvm.model.MovieListItemModel
+import com.example.reviewnest_mvvm.mappers.toMoviesModelList
+import com.example.reviewnest_mvvm.mappers.toReviewModel
+import com.example.reviewnest_mvvm.model.MovieDetailsModel
 
 class TMDbApiProvider(private val apiKey: String) {
     suspend fun getMovies(): List<MovieListItemModel> {

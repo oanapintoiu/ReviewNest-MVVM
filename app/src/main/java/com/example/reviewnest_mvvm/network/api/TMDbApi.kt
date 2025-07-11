@@ -1,9 +1,9 @@
-package com.example.reviewnest_mvp.network.api
+package com.example.reviewnest_mvvm.network.api
 
-import com.example.reviewnest_mvp.network.dto.CastCreditsDTO
-import com.example.reviewnest_mvp.network.dto.MovieDetailsDTO
-import com.example.reviewnest_mvp.network.dto.MoviesListResponse
-import com.example.reviewnest_mvp.network.dto.ReviewsResponseDTO
+import com.example.reviewnest_mvvm.network.dto.CastCreditsDTO
+import com.example.reviewnest_mvvm.network.dto.MovieDetailsDTO
+import com.example.reviewnest_mvvm.network.dto.MoviesListResponse
+import com.example.reviewnest_mvvm.network.dto.ReviewsResponseDTO
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.network.api
+package com.example.reviewnest_mvvm.network.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

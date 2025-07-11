@@ -14,7 +14,7 @@ if (localPropsFile.exists()) {
 val tmdbApiKey = localProps.getProperty("TMDB_API_KEY") ?: ""
 
 android {
-    namespace = "com.example.reviewnest_mvp"
+    namespace = "com.example.reviewnest_mvvm"
     compileSdk = 35
 
     buildFeatures {
@@ -23,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.reviewnest_mvp"
+        applicationId = "com.example.reviewnest_mvvm"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

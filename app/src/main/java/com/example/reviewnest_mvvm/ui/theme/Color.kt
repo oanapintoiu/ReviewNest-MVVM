@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.ui.theme
+package com.example.reviewnest_mvvm.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

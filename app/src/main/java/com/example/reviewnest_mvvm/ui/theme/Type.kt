@@ -1,4 +1,4 @@
-package com.example.reviewnest_mvp.ui.theme
+package com.example.reviewnest_mvvm.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
