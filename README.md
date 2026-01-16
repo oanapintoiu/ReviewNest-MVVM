@@ -1,3 +1,5 @@
  ## ReviewNest Demo Video
 
-https://github.com/user-attachments/assets/70e29d0a-9868-49e5-bdfc-3120142f57ac
+
+https://github.com/user-attachments/assets/9594451b-7cd2-41da-b1b5-5c1e9fc2f53b
+
